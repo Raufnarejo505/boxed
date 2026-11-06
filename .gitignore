@@ -1,0 +1,18 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# data + artefacts (regenerable; never commit weights)
+data/
+outputs/
+wandb/
+*.safetensors
+*.bin
+
+# keep results/ — the eval JSON is the evidence behind the README table
+!results/*.json
+
+.DS_Store
+.ipynb_checkpoints/

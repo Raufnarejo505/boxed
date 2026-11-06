@@ -1,0 +1,13 @@
+# Pinned for a T4 / QLoRA setup. trl's SFTTrainer API changed after 0.12
+# (max_seq_length -> max_length), so do not float these.
+torch>=2.4,<2.6
+transformers==4.46.3
+trl==0.12.2
+peft==0.13.2
+accelerate==1.1.1
+bitsandbytes==0.44.1
+datasets==3.0.1
+huggingface_hub>=0.26
+safetensors>=0.4
+pyyaml>=6.0
+tqdm>=4.66

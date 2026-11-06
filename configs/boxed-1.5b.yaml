@@ -1,0 +1,42 @@
+# Single config for the whole run. Code reads this; nothing is hardcoded in src/.
+name: boxed-1.5b
+
+base_model: Qwen/Qwen2.5-1.5B
+
+data:
+  train_file: data/sft_train.jsonl
+  # NuminaMath-CoT sources that leak into our eval set get dropped here.
+  # The `gsm8k` source is 7345 rows of the exact benchmark we evaluate on.
+  drop_sources: ["gsm8k"]
+  n_samples: 20000
+  max_chars: 8000
+  min_chars: 200
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj",
+                   "gate_proj", "up_proj", "down_proj"]
+
+train:
+  output_dir: outputs/boxed-1.5b
+  max_seq_length: 2048
+  num_train_epochs: 2
+  per_device_train_batch_size: 8      # drop to 4 on OOM, double grad accum
+  gradient_accumulation_steps: 2      # effective batch = 16
+  learning_rate: 2.0e-4
+  lr_scheduler_type: cosine
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  logging_steps: 10
+  save_strategy: steps
+  save_steps: 200
+  save_total_limit: 2
+  seed: 42
+
+hub:
+  # set these to your own account before pushing
+  lora_repo: yourname/boxed-1.5b-lora
+  merged_repo: yourname/boxed-1.5b-merged
+  private: false
