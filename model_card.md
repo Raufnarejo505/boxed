@@ -73,7 +73,7 @@ accumulation to 4. The effective batch stays the same.
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "YOURNAME/boxed-1.5b-merged"
+model_id = "abdulrauf5121/boxed-1.5b-merged"
 tok = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype="float16", device_map="auto")
 

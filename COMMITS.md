@@ -156,9 +156,9 @@ git commit -m "feat: add prompt framing and grading helpers" \
 Then create the empty repo on GitHub and push:
 
 ```bash
-git remote add origin https://github.com/YOURNAME/boxed.git
-git branch -M main
-git push -u origin main
+git remote add origin https://github.com/Raufnarejo505/boxed.git
+git branch -M master
+git push -u origin master
 ```
 
 ## One commit instead

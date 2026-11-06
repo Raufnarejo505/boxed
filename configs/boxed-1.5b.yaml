@@ -36,7 +36,6 @@ train:
   seed: 42
 
 hub:
-  # set these to your own account before pushing
-  lora_repo: yourname/boxed-1.5b-lora
-  merged_repo: yourname/boxed-1.5b-merged
+  lora_repo: abdulrauf5121/boxed-1.5b-lora
+  merged_repo: abdulrauf5121/boxed-1.5b-merged
   private: false

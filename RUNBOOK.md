@@ -10,7 +10,7 @@ off by default. Read this before your first run, or you will lose a checkpoint.
    Settings → Access Tokens → New token → *Write*.
 3. In Kaggle: **Add-ons → Secrets** → add `HF_TOKEN` with your HF token.
    Notebooks can then read it via `UserSecretsClient` — never paste a token into a cell.
-4. Create a GitHub repo (empty, no README) and a HF model repo `yourname/boxed-1.5b-lora`.
+4. Create a GitHub repo (empty, no README) and a HF model repo `abdulrauf5121/boxed-1.5b-lora`.
 
 ## 1. Create the notebook
 
